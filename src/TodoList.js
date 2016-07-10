@@ -8,34 +8,48 @@ class TodoList extends React.Component {
 		super();
 
 		this.state = {
-			todoItems: [
+			todos: [
 				{id: 0, title: "", completed: false}
 			]
 		};
 	}
+
 
 	componentDidMount() {
 		this.loadTodos();
 	}
 
 	loadTodos(event) {
+		let component = this;
+
 		$.getJSON(`https://whispering-thicket-55256.herokuapp.com/todos.json`, function(data) {
-			console.log(data[0].title);
+			console.log(data);
+
+			component.setState({
+				todos: data
+			});
 		});
 	}
 
-	// loadTodos() {
-	// 	let url = this.props.url;
-	// 	let component = this;
-	//
-	// 	$.ajax({
-	// 		type: get
-	// 	})
-	// }
+	renderTodos(todo, i) {
+		return (
+			<TodoItem
+				key={todo.id}
+				id={todo.id}
+				title={todo.title}
+				completed={todo.completed}
+				createdAt={todo.created_at}
+				updatedAt={todo.updated_at} />
+		);
+	}
 
 	render() {
+		let todos = this.state.todos
     return (
       <div>
+				<ul>
+	        {this.state.todos.map(this.renderTodos.bind(this))}
+	      </ul>
       </div>
     );
   }
