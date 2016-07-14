@@ -59,20 +59,7 @@ class TodoList extends React.Component {
 		});
 	}
 
-	renderTodos(todo, i) {
-		return (
-			<TodoItem
-				key={todo.id}
-				id={todo.id}
-				title={todo.title}
-				completed={todo.completed}
-				createdAt={todo.created_at}
-				updatedAt={todo.updated_at} />
-		);
-	}
-
 	render() {
-		let todos = this.state.todos
     return (
       <div>
 			 <AddTodoForm onChange={this.loadTodos.bind(this)} />
@@ -82,7 +69,18 @@ class TodoList extends React.Component {
 					Total: {this.state.todos.length}
 			 </div>
 				<ul>
-	        {this.state.todos.map(this.renderTodos.bind(this))}
+	        {this.state.todos.map(function(todo,i) {
+						return (
+							<TodoItem
+								key={todo.id}
+								id={todo.id}
+								title={todo.title}
+								completed={todo.completed}
+								createdAt={todo.created_at}
+								updatedAt={todo.updated_at}
+								onChange={this.loadTodos.bind(this)} />
+						);
+					},this)}
 	      </ul>
       </div>
     );
