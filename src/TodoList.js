@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import _ from 'lodash';
 import AddTodoForm from './AddTodoForm';
 import TodoItem from './TodoItem';
 
@@ -49,6 +50,7 @@ class TodoList extends React.Component {
 
 	todosTodo() {
 		return this.state.todos.filter(function(todo, i) {
+
 			return todo.completed !== true;
 		});
 	}
@@ -69,7 +71,8 @@ class TodoList extends React.Component {
 					Total: {this.state.todos.length}
 			 </div>
 				<ul>
-	        {this.state.todos.map(function(todo,i) {
+	        {this.state.todos.map(function(todo,i)  {
+						console.log(todo.completed)
 						return (
 							<TodoItem
 								key={todo.id}
