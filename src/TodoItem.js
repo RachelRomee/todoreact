@@ -75,12 +75,35 @@ class TodoItem extends React.Component {
 			});
 	}
 
+	deleteTodo(e) {
+		e.preventDefault();
+
+		let component = this;
+
+		jQuery.ajax({
+			type: "DELETE",
+			url: `https://whispering-thicket-55256.herokuapp.com/todos/${this.props.id}.json`,
+			contentType: "application/json",
+			dataType: "json"
+		})
+			.done(function(data) {
+				console.log(data);
+			})
+			.fail(function(error) {
+				console.log(error);
+			})
+			.always(function() {
+				component.props.onDestroy();
+			});
+	}
+
 	render() {
 		console.log(this.state.id);
     return (
 			<li>
 			<input className="toggle" id={this.state.id} type="checkbox" ref="completed" checked={this.state.completed ? "checked" : ""} onClick={this.toggleChecked.bind(this)} />
 			{this.props.title}
+			<a href="#" onClick={this.deleteTodo.bind(this)}>x</a>
 			</li>
     );
   }
