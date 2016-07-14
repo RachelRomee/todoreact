@@ -7,13 +7,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello World!</h1>
+        <h1>WooHoo!</h1>
         <TodoList url={apiUrl}/>
       </div>
     );
   }
 }
-
-
 
 export default App;

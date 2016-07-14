@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-	// import TodoForm from './TodoForm';
+import AddTodoForm from './AddTodoForm';
 import TodoItem from './TodoItem';
 
 class TodoList extends React.Component {
@@ -47,6 +47,7 @@ class TodoList extends React.Component {
 		let todos = this.state.todos
     return (
       <div>
+			 <AddTodoForm onChange={this.loadTodos.bind(this)} />
 				<ul>
 	        {this.state.todos.map(this.renderTodos.bind(this))}
 	      </ul>
