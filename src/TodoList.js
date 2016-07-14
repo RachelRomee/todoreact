@@ -10,10 +10,13 @@ class TodoList extends React.Component {
 		this.state = {
 			todos: [
 				{id: 0, title: "", completed: false}
-			]
+			],
+			counts: {
+				todo: 0,
+				done: 0
+			}
 		};
 	}
-
 
 	componentDidMount() {
 		this.loadTodos();
@@ -28,28 +31,56 @@ class TodoList extends React.Component {
 			component.setState({
 				todos: data
 			});
+
+			component.reCount();
 		});
 	}
 
-	renderTodos(todo, i) {
-		return (
-			<TodoItem
-				key={todo.id}
-				id={todo.id}
-				title={todo.title}
-				completed={todo.completed}
-				createdAt={todo.created_at}
-				updatedAt={todo.updated_at} />
-		);
+	reCount() {
+		let component = this;
+
+		this.setState({
+			counts: {
+				todo: component.todosTodo().length,
+				done: component.todosDone().length
+			}
+		});
+	}
+
+	todosTodo() {
+		return this.state.todos.filter(function(todo, i) {
+			return todo.completed !== true;
+		});
+	}
+
+	todosDone() {
+		return this.state.todos.filter(function(todo, i) {
+			return todo.completed === true;
+		});
 	}
 
 	render() {
-		let todos = this.state.todos
     return (
       <div>
 			 <AddTodoForm onChange={this.loadTodos.bind(this)} />
+			 <div>
+			 		Todo: {this.state.counts.todo}
+					Done: {this.state.counts.done}
+					Total: {this.state.todos.length}
+			 </div>
 				<ul>
-	        {this.state.todos.map(this.renderTodos.bind(this))}
+	        {this.state.todos.map(function(todo,i) {
+						return (
+							<TodoItem
+								key={todo.id}
+								id={todo.id}
+								title={todo.title}
+								completed={todo.completed}
+								createdAt={todo.created_at}
+								updatedAt={todo.updated_at}
+								onChange={this.loadTodos.bind(this)} />
+						);
+					},this)}
 	      </ul>
       </div>
     );
