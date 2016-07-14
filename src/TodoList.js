@@ -78,7 +78,8 @@ class TodoList extends React.Component {
 								completed={todo.completed}
 								createdAt={todo.created_at}
 								updatedAt={todo.updated_at}
-								onChange={this.loadTodos.bind(this)} />
+								onChange={this.loadTodos.bind(this)}
+								onDestroy={this.loadTodos.bind(this)} />
 						);
 					},this)}
 	      </ul>
