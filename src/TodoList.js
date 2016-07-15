@@ -3,6 +3,7 @@ import $ from 'jquery';
 import _ from 'lodash';
 import AddTodoForm from './AddTodoForm';
 import TodoItem from './TodoItem';
+import FlatButton from 'material-ui/FlatButton';
 
 class TodoList extends React.Component {
 	constructor() {
@@ -70,6 +71,7 @@ class TodoList extends React.Component {
 					Done: {this.state.counts.done}
 					Total: {this.state.todos.length}
 			 </div>
+			 <FlatButton label="Default" />
 				<ul>
 	        {this.state.todos.map(function(todo,i)  {
 						console.log(todo.completed)

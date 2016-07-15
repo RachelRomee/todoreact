@@ -12,7 +12,7 @@ class App extends React.Component {
     return (
       <MuiThemeProvider>
         <div>
-          <h1>WooHoo!</h1>
+          <h1 className="flow-text" >WooHoo!</h1>
           <TodoList url={apiUrl}/>
         </div>
       </MuiThemeProvider>
