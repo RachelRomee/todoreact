@@ -5,13 +5,11 @@ import TodoList from './TodoList';
 
 injectTapEventPlugin();
 
-const apiUrl = "https://whispering-thicket-55256.herokuapp.com/"
-
 class App extends React.Component {
   render() {
     return (
       <MuiThemeProvider>
-          <TodoList url={apiUrl}/>
+          <TodoList/>
       </MuiThemeProvider>
     );
   }

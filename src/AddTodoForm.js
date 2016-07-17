@@ -1,7 +1,40 @@
 import React from 'react';
 import $ from 'jquery';
+import ColorSet from './styles/ColorSet';
+
+const styles = {
+	adddiv: {
+		width: "60%",
+		height: "80px",
+		border: "1px solid #eee",
+		borderRadius: "4px",
+		margin: "15px auto",
+	},
+	input: {
+		width: "75%",
+		height: "65px",
+		// border: "none",
+		margin: "0.7%",
+		color: "#000",
+		display: "inline-block",
+		fontFamily: "'Roboto', sansSerif",
+		fontSize: "24px",
+		paddingLeft: "8%",
+		borderRadius: "4px"
+	},
+	btn: {
+		width: "8.4%",
+		height: "69px",
+		backgroundColor: ColorSet.primary,
+		border: "none",
+		position: "fixed",
+		marginTop: "0.5%",
+		borderRadius: "4px"
+	}
+}
 
 class AddTodoForm extends React.Component {
+
 
 	addNewTodo(event){
     event.preventDefault();
@@ -34,11 +67,12 @@ class AddTodoForm extends React.Component {
 
   render() {
     return (
-			<form onSubmit={this.addNewTodo.bind(this)}>
-					<label>New Todo</label>
-					<input ref="addTodoInput" />
-					<button>Add Todo</button>
-			</form>
+			<div style={styles.adddiv}>
+				<form onSubmit={this.addNewTodo.bind(this)}>
+						<input style={styles.input} ref="addTodoInput" placeholder="I have to.." />
+						<button style={styles.btn}>Add Todo</button>
+				</form>
+			</div>
     );
   }
 }

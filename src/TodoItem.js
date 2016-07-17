@@ -3,18 +3,30 @@ import jQuery from 'jquery';
 
 const styles = {
 	div: {
-		width: "90%",
-		height: "50px",
+		width: "60%",
+		height: "80px",
 		border: "1px solid #eee",
-		borderRadius: "4",
-		margin: "10px"
+		borderRadius: "4px",
+		margin: "15px auto",
 	},
 	li: {
 		listStyleType: "none"
+	},
+	text: {
+		color: "#000",
+		display: "inline-block",
+		fontFamily: "'Roboto', sansSerif",
+		fontSize: "24px",
+		paddingLeft: "6%"
+	},
+	delete: {
+		float: "right",
+		verticalAlign: "center"
 	}
 }
 
 class TodoItem extends React.Component {
+
 	constructor() {
 	super();
 
@@ -117,8 +129,8 @@ class TodoItem extends React.Component {
 			<div style={styles.div}>
 				<li style={styles.li}>
 					<input className="toggle" id={this.state.id} type="checkbox" ref="completed" checked={this.state.completed ? "checked" : ""} onClick={this.toggleChecked.bind(this)} />
-						{this.props.title}
-					<a href="#" onClick={this.deleteTodo.bind(this)}>x</a>
+					<p style={styles.text}>	{this.props.title} </p>
+					<a href="#" style={styles.delete} onClick={this.deleteTodo.bind(this)}>x</a>
 				</li>
 			</div>
     );
