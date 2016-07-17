@@ -8,12 +8,11 @@ const styles = {
 		height: "80px",
 		border: "1px solid #eee",
 		borderRadius: "4px",
-		margin: "15px auto",
+		margin: "auto",
 	},
 	input: {
 		width: "75%",
 		height: "65px",
-		// border: "none",
 		margin: "0.7%",
 		color: "#000",
 		display: "inline-block",
@@ -27,7 +26,7 @@ const styles = {
 		height: "69px",
 		backgroundColor: ColorSet.primary,
 		border: "none",
-		position: "fixed",
+		position: "absolute",
 		marginTop: "0.5%",
 		borderRadius: "4px"
 	}
