@@ -122,6 +122,7 @@ const styles = {
 		marginTop: "40px",
 		padding: "10px",
 		backgroundColor: "rgba(255,255,255,0.4)",
-		fontSize: "13px"
+		fontSize: "13px",
+		color: "white"
 	}
 }
