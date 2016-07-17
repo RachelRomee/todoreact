@@ -4,11 +4,11 @@ import ColorSet from './styles/ColorSet';
 
 const styles = {
 	adddiv: {
-		width: "60%",
+		width: "58%",
 		height: "80px",
 		border: "1px solid #eee",
 		borderRadius: "4px",
-		margin: "auto",
+		marginLeft: "22.5%"
 	},
 	input: {
 		width: "75%",
@@ -22,7 +22,7 @@ const styles = {
 		borderRadius: "4px"
 	},
 	btn: {
-		width: "8.4%",
+		width: "8.2%",
 		height: "69px",
 		backgroundColor: ColorSet.primary,
 		border: "none",
