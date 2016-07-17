@@ -1,5 +1,6 @@
 import React from 'react';
 import jQuery from 'jquery';
+import MyCheckbox from './Check';
 
 class TodoItem extends React.Component {
 
@@ -104,7 +105,7 @@ class TodoItem extends React.Component {
     return (
 			<div style={styles.div}>
 				<li style={styles.li}>
-					<input style={styles.checkbox} className="toggle" id={this.state.id} type="checkbox" ref="completed" checked={this.state.completed ? "checked" : ""} onClick={this.toggleChecked.bind(this)} />
+					<MyCheckbox style={styles.checkbox} className="toggle" id={this.state.id}  ref="completed" checked={this.state.completed ? "checked" : ""} onClick={this.toggleChecked.bind(this)} />
 					<p style={styles.text}>	{this.props.title} </p>
 					<a href="#" onClick={this.deleteTodo.bind(this)}><img style={styles.delete} src="https://cdn4.iconfinder.com/data/icons/linecon/512/delete-512.png"/></a>
 				</li>
