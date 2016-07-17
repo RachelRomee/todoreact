@@ -97,6 +97,7 @@ class TodoItem extends React.Component {
 			});
 	}
 
+// ^^ RENDER
 	render() {
 		console.log(this.state.id);
     return (
