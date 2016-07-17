@@ -19,7 +19,7 @@ const styles = {
     width: "105wh",
     backgroundColor: ColorSet.background,
     fontFamily: "'Roboto', sansSerif",
-    margin: "-35px",
-    fontWeight: "200"
+    margin: -35,
+    fontWeight: 200
 	}
 }

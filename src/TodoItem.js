@@ -118,9 +118,9 @@ export default TodoItem;
 const styles = {
 	div: {
 		width: "60%",
-		height: "80px",
+		height: 80,
 		border: "1px solid #eee",
-		borderRadius: "4px",
+		borderRadius: 4,
 		margin: "15px auto",
 		position: "relative",
 		backgroundColor: "rgba(255,255,255,1)"
@@ -132,8 +132,8 @@ const styles = {
 		color: "#000",
 		display: "inline-block",
 		paddingLeft: "11.2%",
-		paddingTop: "5px",
-		fontSize: "24px"
+		paddingTop: 5,
+		fontSize: 24
 	},
 	checkbox: {
 		position: "absolute",
@@ -143,7 +143,7 @@ const styles = {
 	},
 	delete: {
 		float: "right",
-		width: "25px",
+		width: 25,
 		margin: "auto 0px",
 		position: "absolute",
 		top: "50%",

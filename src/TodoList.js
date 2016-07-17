@@ -99,30 +99,30 @@ const styles = {
 	title : {
 		color: "white",
 		textAlign:"center",
-		paddingTop: "30px",
-		fontSize: "50px",
-		fontWeight: "300"
+		paddingTop: 30,
+		fontSize: 50,
+		fontWeight: 300
 	},
 	counts: {
 		textAlign: "center",
 		width: "55%",
 		marginLeft: "22.5%",
-		marginTop: "20px",
-		marginBottom: "10px",
-		fontSize: "18px",
+		marginTop: 20,
+		marginBottom: 10,
+		fontSize: 18,
 		color: "white",
-		fontWeight: "300"
+		fontWeight: 300
 	},
 	count: {
 		display: "inline",
-		padding: "20px",
+		padding: 20,
 	},
 	footer: {
 		textAlign: "center",
-		marginTop: "40px",
-		padding: "10px",
+		marginTop: 40,
+		padding: 10,
 		backgroundColor: "rgba(255,255,255,0.4)",
-		fontSize: "13px",
+		fontSize: 13,
 		color: "white"
 	}
 }

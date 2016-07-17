@@ -55,6 +55,7 @@
     "jquery": "^3.1.0",
     "lodash": "^4.13.1",
     "material-ui": "^0.15.0",
+    "radium": "^0.18.0",
     "react": "15.2.1",
     "react-controlfacades": "^1.1.4",
     "react-dom": "15.2.1",
