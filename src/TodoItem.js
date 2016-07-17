@@ -1,7 +1,32 @@
 import React from 'react';
 import jQuery from 'jquery';
 
+const styles = {
+	div: {
+		width: "60%",
+		height: "80px",
+		border: "1px solid #eee",
+		borderRadius: "4px",
+		margin: "15px auto",
+	},
+	li: {
+		listStyleType: "none"
+	},
+	text: {
+		color: "#000",
+		display: "inline-block",
+		fontFamily: "'Roboto', sansSerif",
+		fontSize: "24px",
+		paddingLeft: "6%"
+	},
+	delete: {
+		float: "right",
+		verticalAlign: "center"
+	}
+}
+
 class TodoItem extends React.Component {
+
 	constructor() {
 	super();
 
@@ -97,14 +122,17 @@ class TodoItem extends React.Component {
 			});
 	}
 
+// ^^ RENDER
 	render() {
 		console.log(this.state.id);
     return (
-			<li>
-			<input className="toggle" id={this.state.id} type="checkbox" ref="completed" checked={this.state.completed ? "checked" : ""} onClick={this.toggleChecked.bind(this)} />
-			{this.props.title}
-			<a href="#" onClick={this.deleteTodo.bind(this)}>x</a>
-			</li>
+			<div style={styles.div}>
+				<li style={styles.li}>
+					<input className="toggle" id={this.state.id} type="checkbox" ref="completed" checked={this.state.completed ? "checked" : ""} onClick={this.toggleChecked.bind(this)} />
+					<p style={styles.text}>	{this.props.title} </p>
+					<a href="#" style={styles.delete} onClick={this.deleteTodo.bind(this)}>x</a>
+				</li>
+			</div>
     );
   }
 }

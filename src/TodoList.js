@@ -1,7 +1,9 @@
 import React from 'react';
 import $ from 'jquery';
+import _ from 'lodash';
 import AddTodoForm from './AddTodoForm';
 import TodoItem from './TodoItem';
+
 
 class TodoList extends React.Component {
 	constructor() {
@@ -49,6 +51,7 @@ class TodoList extends React.Component {
 
 	todosTodo() {
 		return this.state.todos.filter(function(todo, i) {
+
 			return todo.completed !== true;
 		});
 	}
@@ -62,6 +65,7 @@ class TodoList extends React.Component {
 	render() {
     return (
       <div>
+			 <h1>WooHoo!</h1>
 			 <AddTodoForm onChange={this.loadTodos.bind(this)} />
 			 <div>
 			 		Todo: {this.state.counts.todo}
@@ -69,7 +73,8 @@ class TodoList extends React.Component {
 					Total: {this.state.todos.length}
 			 </div>
 				<ul>
-	        {this.state.todos.map(function(todo,i) {
+	        {this.state.todos.map(function(todo,i)  {
+						console.log(todo.completed)
 						return (
 							<TodoItem
 								key={todo.id}
@@ -81,7 +86,7 @@ class TodoList extends React.Component {
 								onChange={this.loadTodos.bind(this)}
 								onDestroy={this.loadTodos.bind(this)} />
 						);
-					},this)}
+					}, this)}
 	      </ul>
       </div>
     );
