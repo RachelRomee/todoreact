@@ -1,6 +1,19 @@
 import React from 'react';
 import jQuery from 'jquery';
 
+const styles = {
+	div: {
+		width: "90%",
+		height: "50px",
+		border: "1px solid #eee",
+		borderRadius: "4",
+		margin: "10px"
+	},
+	li: {
+		listStyleType: "none"
+	}
+}
+
 class TodoItem extends React.Component {
 	constructor() {
 	super();
@@ -101,11 +114,13 @@ class TodoItem extends React.Component {
 	render() {
 		console.log(this.state.id);
     return (
-			<li>
-			<input className="toggle" id={this.state.id} type="checkbox" ref="completed" checked={this.state.completed ? "checked" : ""} onClick={this.toggleChecked.bind(this)} />
-			{this.props.title}
-			<a href="#" onClick={this.deleteTodo.bind(this)}>x</a>
-			</li>
+			<div style={styles.div}>
+				<li style={styles.li}>
+					<input className="toggle" id={this.state.id} type="checkbox" ref="completed" checked={this.state.completed ? "checked" : ""} onClick={this.toggleChecked.bind(this)} />
+						{this.props.title}
+					<a href="#" onClick={this.deleteTodo.bind(this)}>x</a>
+				</li>
+			</div>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TodoList from './TodoList';
 
 injectTapEventPlugin();
@@ -11,10 +11,7 @@ class App extends React.Component {
   render() {
     return (
       <MuiThemeProvider>
-        <div>
-          <h1>WooHoo!</h1>
           <TodoList url={apiUrl}/>
-        </div>
       </MuiThemeProvider>
     );
   }

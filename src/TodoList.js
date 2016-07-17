@@ -65,6 +65,7 @@ class TodoList extends React.Component {
 	render() {
     return (
       <div>
+			 <h1>WooHoo!</h1>
 			 <AddTodoForm onChange={this.loadTodos.bind(this)} />
 			 <div>
 			 		Todo: {this.state.counts.todo}
