@@ -8,20 +8,33 @@ const styles = {
 		border: "1px solid #eee",
 		borderRadius: "4px",
 		margin: "15px auto",
+		position: "relative"
 	},
 	li: {
-		listStyleType: "none"
+		listStyleType: "none",
 	},
 	text: {
 		color: "#000",
 		display: "inline-block",
 		fontFamily: "'Roboto', sansSerif",
 		fontSize: "24px",
-		paddingLeft: "6%"
+		paddingLeft: "15%",
+		paddingTop: "5px"
+	},
+	checkbox: {
+		position: "absolute",
+		top: "50%",
+		left: "5%",
+		transform: "translateY(-50%)"
 	},
 	delete: {
 		float: "right",
-		verticalAlign: "center"
+		width: "25px",
+		margin: "auto 0px",
+		position: "absolute",
+		top: "50%",
+		right: "5%",
+		transform: "translateY(-50%)"
 	}
 }
 
@@ -128,9 +141,9 @@ class TodoItem extends React.Component {
     return (
 			<div style={styles.div}>
 				<li style={styles.li}>
-					<input className="toggle" id={this.state.id} type="checkbox" ref="completed" checked={this.state.completed ? "checked" : ""} onClick={this.toggleChecked.bind(this)} />
+					<input style={styles.checkbox} className="toggle" id={this.state.id} type="checkbox" ref="completed" checked={this.state.completed ? "checked" : ""} onClick={this.toggleChecked.bind(this)} />
 					<p style={styles.text}>	{this.props.title} </p>
-					<a href="#" style={styles.delete} onClick={this.deleteTodo.bind(this)}>x</a>
+					<a href="#" onClick={this.deleteTodo.bind(this)}><img style={styles.delete} src="https://cdn4.iconfinder.com/data/icons/linecon/512/delete-512.png"/></a>
 				</li>
 			</div>
     );
