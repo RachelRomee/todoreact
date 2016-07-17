@@ -51,31 +51,31 @@ export default AddTodoForm;
 const styles = {
 	adddiv: {
 		width: "58%",
-		height: "80px",
-		borderRadius: "4px",
+		height: 80,
+		borderRadius: 4,
 		marginLeft: "22.5%",
 		backgroundColor: "rgba(255,255,255,1)"
 	},
 	input: {
 		width: "75%",
-		height: "65px",
+		height: 64,
 		margin: "0.7%",
 		display: "inline-block",
-		fontSize: "24px",
+		fontSize: 24,
 		paddingLeft: "8%",
-		borderRadius: "4px",
+		borderRadius: 4,
 		borderColor: ColorSet.primary,
 		fontWeight: "300"
 	},
 	btn: {
 		width: "8.7% ",
-		height: "69px",
+		height: 69,
 		backgroundColor: ColorSet.primary,
 		border: "none",
 		position: "absolute",
 		marginTop: "0.5%",
-		borderRadius: "4px",
-		fontSize: "24px",
+		borderRadius: 4,
+		fontSize: 24,
 		fontWeight: "300",
 		color: "white"
 	}
