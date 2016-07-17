@@ -1,43 +1,6 @@
 import React from 'react';
 import jQuery from 'jquery';
 
-const styles = {
-	div: {
-		width: "60%",
-		height: "80px",
-		border: "1px solid #eee",
-		borderRadius: "4px",
-		margin: "15px auto",
-		position: "relative",
-		backgroundColor: "rgba(255,255,255,1)"
-	},
-	li: {
-		listStyleType: "none",
-	},
-	text: {
-		color: "#000",
-		display: "inline-block",
-		fontSize: "24px",
-		paddingLeft: "15%",
-		paddingTop: "5px"
-	},
-	checkbox: {
-		position: "absolute",
-		top: "50%",
-		left: "5%",
-		transform: "translateY(-50%)"
-	},
-	delete: {
-		float: "right",
-		width: "25px",
-		margin: "auto 0px",
-		position: "absolute",
-		top: "50%",
-		right: "5%",
-		transform: "translateY(-50%)"
-	}
-}
-
 class TodoItem extends React.Component {
 
 	constructor() {
@@ -151,3 +114,40 @@ class TodoItem extends React.Component {
 }
 
 export default TodoItem;
+
+const styles = {
+	div: {
+		width: "60%",
+		height: "80px",
+		border: "1px solid #eee",
+		borderRadius: "4px",
+		margin: "15px auto",
+		position: "relative",
+		backgroundColor: "rgba(255,255,255,1)"
+	},
+	li: {
+		listStyleType: "none",
+	},
+	text: {
+		color: "#000",
+		display: "inline-block",
+		paddingLeft: "11.2%",
+		paddingTop: "5px",
+		fontSize: "24px"
+	},
+	checkbox: {
+		position: "absolute",
+		top: "50%",
+		left: "5%",
+		transform: "translateY(-50%)"
+	},
+	delete: {
+		float: "right",
+		width: "25px",
+		margin: "auto 0px",
+		position: "absolute",
+		top: "50%",
+		right: "5%",
+		transform: "translateY(-50%)"
+	}
+}

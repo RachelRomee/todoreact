@@ -87,6 +87,7 @@ class TodoList extends React.Component {
 						);
 					}, this)}
 	      </ul>
+				<footer style={styles.footer}>by Rachel Romée &hearts;</footer>
       </div>
     );
   }
@@ -97,17 +98,30 @@ export default TodoList;
 const styles = {
 	title : {
 		color: "white",
-		textAlign:"center"
+		textAlign:"center",
+		paddingTop: "30px",
+		fontSize: "50px",
+		fontWeight: "300"
 	},
 	counts: {
 		textAlign: "center",
 		width: "55%",
 		marginLeft: "22.5%",
 		marginTop: "20px",
-		marginBottom: "10px"
+		marginBottom: "10px",
+		fontSize: "18px",
+		color: "white",
+		fontWeight: "300"
 	},
 	count: {
 		display: "inline",
 		padding: "20px",
+	},
+	footer: {
+		textAlign: "center",
+		marginTop: "40px",
+		padding: "10px",
+		backgroundColor: "rgba(255,255,255,0.4)",
+		fontSize: "13px"
 	}
 }

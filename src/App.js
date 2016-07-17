@@ -2,15 +2,6 @@ import React from 'react';
 import TodoList from './TodoList';
 import ColorSet from './styles/ColorSet';
 
-const styles = {
-	body: {
-		height: "100vh",
-    width: "100wh",
-    backgroundColor: ColorSet.primary,
-    fontFamily: "'Roboto', sansSerif",
-	}
-}
-
 class App extends React.Component {
   render() {
     return (
@@ -22,3 +13,13 @@ class App extends React.Component {
 }
 
 export default App;
+
+const styles = {
+	body: {
+    width: "105wh",
+    backgroundColor: ColorSet.background,
+    fontFamily: "'Roboto', sansSerif",
+    margin: "-35px",
+    fontWeight: "200"
+	}
+}
