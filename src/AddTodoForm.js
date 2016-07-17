@@ -2,36 +2,6 @@ import React from 'react';
 import $ from 'jquery';
 import ColorSet from './styles/ColorSet';
 
-const styles = {
-	adddiv: {
-		width: "60%",
-		height: "80px",
-		border: "1px solid #eee",
-		borderRadius: "4px",
-		margin: "auto",
-	},
-	input: {
-		width: "75%",
-		height: "65px",
-		margin: "0.7%",
-		color: "#000",
-		display: "inline-block",
-		fontFamily: "'Roboto', sansSerif",
-		fontSize: "24px",
-		paddingLeft: "8%",
-		borderRadius: "4px"
-	},
-	btn: {
-		width: "8.4%",
-		height: "69px",
-		backgroundColor: ColorSet.primary,
-		border: "none",
-		position: "absolute",
-		marginTop: "0.5%",
-		borderRadius: "4px"
-	}
-}
-
 class AddTodoForm extends React.Component {
 
 
@@ -69,7 +39,7 @@ class AddTodoForm extends React.Component {
 			<div style={styles.adddiv}>
 				<form onSubmit={this.addNewTodo.bind(this)}>
 						<input style={styles.input} ref="addTodoInput" placeholder="I have to.." />
-						<button style={styles.btn}>Add Todo</button>
+						<button style={styles.btn}>Add</button>
 				</form>
 			</div>
     );
@@ -77,3 +47,36 @@ class AddTodoForm extends React.Component {
 }
 
 export default AddTodoForm;
+
+const styles = {
+	adddiv: {
+		width: "58%",
+		height: "80px",
+		borderRadius: "4px",
+		marginLeft: "22.5%",
+		backgroundColor: "rgba(255,255,255,1)"
+	},
+	input: {
+		width: "75%",
+		height: "65px",
+		margin: "0.7%",
+		display: "inline-block",
+		fontSize: "24px",
+		paddingLeft: "8%",
+		borderRadius: "4px",
+		borderColor: ColorSet.primary,
+		fontWeight: "300"
+	},
+	btn: {
+		width: "8.7% ",
+		height: "69px",
+		backgroundColor: ColorSet.primary,
+		border: "none",
+		position: "absolute",
+		marginTop: "0.5%",
+		borderRadius: "4px",
+		fontSize: "24px",
+		fontWeight: "300",
+		color: "white"
+	}
+}

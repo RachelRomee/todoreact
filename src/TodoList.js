@@ -4,7 +4,6 @@ import _ from 'lodash';
 import AddTodoForm from './AddTodoForm';
 import TodoItem from './TodoItem';
 
-
 class TodoList extends React.Component {
 	constructor() {
 		super();
@@ -65,12 +64,12 @@ class TodoList extends React.Component {
 	render() {
     return (
       <div>
-			 <h1>WooHoo!</h1>
+			 <h1 style={styles.title}>WooHoo!</h1>
 			 <AddTodoForm onChange={this.loadTodos.bind(this)} />
-			 <div>
-			 		Todo: {this.state.counts.todo}
-					Done: {this.state.counts.done}
-					Total: {this.state.todos.length}
+			 <div style={styles.counts}>
+			 		<div style={styles.count}> Todo: {this.state.counts.todo}</div>
+					<div style={styles.count}>Done: {this.state.counts.done}</div>
+					<div style={styles.count}>Total: {this.state.todos.length}</div>
 			 </div>
 				<ul>
 	        {this.state.todos.map(function(todo,i)  {
@@ -88,9 +87,41 @@ class TodoList extends React.Component {
 						);
 					}, this)}
 	      </ul>
+				<footer style={styles.footer}>by Rachel Romée &hearts;</footer>
       </div>
     );
   }
 }
 
 export default TodoList;
+
+const styles = {
+	title : {
+		color: "white",
+		textAlign:"center",
+		paddingTop: "30px",
+		fontSize: "50px",
+		fontWeight: "300"
+	},
+	counts: {
+		textAlign: "center",
+		width: "55%",
+		marginLeft: "22.5%",
+		marginTop: "20px",
+		marginBottom: "10px",
+		fontSize: "18px",
+		color: "white",
+		fontWeight: "300"
+	},
+	count: {
+		display: "inline",
+		padding: "20px",
+	},
+	footer: {
+		textAlign: "center",
+		marginTop: "40px",
+		padding: "10px",
+		backgroundColor: "rgba(255,255,255,0.4)",
+		fontSize: "13px"
+	}
+}

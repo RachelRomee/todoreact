@@ -1,30 +1,6 @@
 import React from 'react';
 import jQuery from 'jquery';
 
-const styles = {
-	div: {
-		width: "60%",
-		height: "80px",
-		border: "1px solid #eee",
-		borderRadius: "4px",
-		margin: "15px auto",
-	},
-	li: {
-		listStyleType: "none"
-	},
-	text: {
-		color: "#000",
-		display: "inline-block",
-		fontFamily: "'Roboto', sansSerif",
-		fontSize: "24px",
-		paddingLeft: "6%"
-	},
-	delete: {
-		float: "right",
-		verticalAlign: "center"
-	}
-}
-
 class TodoItem extends React.Component {
 
 	constructor() {
@@ -128,9 +104,9 @@ class TodoItem extends React.Component {
     return (
 			<div style={styles.div}>
 				<li style={styles.li}>
-					<input className="toggle" id={this.state.id} type="checkbox" ref="completed" checked={this.state.completed ? "checked" : ""} onClick={this.toggleChecked.bind(this)} />
+					<input style={styles.checkbox} className="toggle" id={this.state.id} type="checkbox" ref="completed" checked={this.state.completed ? "checked" : ""} onClick={this.toggleChecked.bind(this)} />
 					<p style={styles.text}>	{this.props.title} </p>
-					<a href="#" style={styles.delete} onClick={this.deleteTodo.bind(this)}>x</a>
+					<a href="#" onClick={this.deleteTodo.bind(this)}><img style={styles.delete} src="https://cdn4.iconfinder.com/data/icons/linecon/512/delete-512.png"/></a>
 				</li>
 			</div>
     );
@@ -138,3 +114,40 @@ class TodoItem extends React.Component {
 }
 
 export default TodoItem;
+
+const styles = {
+	div: {
+		width: "60%",
+		height: "80px",
+		border: "1px solid #eee",
+		borderRadius: "4px",
+		margin: "15px auto",
+		position: "relative",
+		backgroundColor: "rgba(255,255,255,1)"
+	},
+	li: {
+		listStyleType: "none",
+	},
+	text: {
+		color: "#000",
+		display: "inline-block",
+		paddingLeft: "11.2%",
+		paddingTop: "5px",
+		fontSize: "24px"
+	},
+	checkbox: {
+		position: "absolute",
+		top: "50%",
+		left: "5%",
+		transform: "translateY(-50%)"
+	},
+	delete: {
+		float: "right",
+		width: "25px",
+		margin: "auto 0px",
+		position: "absolute",
+		top: "50%",
+		right: "5%",
+		transform: "translateY(-50%)"
+	}
+}
