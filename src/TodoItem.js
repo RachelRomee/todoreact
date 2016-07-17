@@ -8,7 +8,8 @@ const styles = {
 		border: "1px solid #eee",
 		borderRadius: "4px",
 		margin: "15px auto",
-		position: "relative"
+		position: "relative",
+		backgroundColor: "rgba(255,255,255,1)"
 	},
 	li: {
 		listStyleType: "none",
@@ -16,7 +17,6 @@ const styles = {
 	text: {
 		color: "#000",
 		display: "inline-block",
-		fontFamily: "'Roboto', sansSerif",
 		fontSize: "24px",
 		paddingLeft: "15%",
 		paddingTop: "5px"

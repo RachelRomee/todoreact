@@ -1,16 +1,22 @@
 import React from 'react';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TodoList from './TodoList';
+import ColorSet from './styles/ColorSet';
 
-injectTapEventPlugin();
+const styles = {
+	body: {
+		height: "100vh",
+    width: "100wh",
+    backgroundColor: ColorSet.primary,
+    fontFamily: "'Roboto', sansSerif",
+	}
+}
 
 class App extends React.Component {
   render() {
     return (
-      <MuiThemeProvider>
+      <div style={styles.body}>
           <TodoList/>
-      </MuiThemeProvider>
+      </div>
     );
   }
 }

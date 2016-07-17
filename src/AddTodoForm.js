@@ -8,15 +8,14 @@ const styles = {
 		height: "80px",
 		border: "1px solid #eee",
 		borderRadius: "4px",
-		marginLeft: "22.5%"
+		marginLeft: "22.5%",
+		backgroundColor: "rgba(255,255,255,1)"
 	},
 	input: {
 		width: "75%",
 		height: "65px",
 		margin: "0.7%",
-		color: "#000",
 		display: "inline-block",
-		fontFamily: "'Roboto', sansSerif",
 		fontSize: "24px",
 		paddingLeft: "8%",
 		borderRadius: "4px"
